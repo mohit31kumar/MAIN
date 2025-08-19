@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #1c1c2c, #3a3a52);
+  overflow: hidden;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  position: relative;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  background: url("logo.png") center/contain no-repeat;
+  transition: transform 0.6s ease;
+  outline: none;
+}
+
+.login-panel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  border-radius: 16px;
+  padding: 30px;
+  width: 320px;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.login-panel.visible {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+  pointer-events: auto;
+}
+
+.role-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.role-option {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  text-align: center;
+  transition: background 0.3s, border 0.3s;
+  border: 2px solid transparent;
+}
+
+.role-option.selected {
+  background: rgba(255, 255, 255, 0.35);
+  border: 2px solid #4169e1;
+}
+
+.role-option.hovered {
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid #4169e1;
+  cursor: pointer;
+}
+
+/* Don't show both selected and hovered at once
+   If hovered, only .hovered should show */
+.role-option.selected.hovered {
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid #4169e1;
+}
+.enrollment {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.enrollment input {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  background: linear-gradient(rgba(15, 15, 25, 0.6), rgba(15, 15, 25, 0.6)),
+    url("background.png") center/cover no-repeat;
+  height: 100%;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Style for the "Enter" button */
+.enrollment button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #4169e1;
+  /* Royal Blue */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.enrollment button:hover,
+.enrollment button:focus {
+  background: #27408b;
+  /* Darker Royal Blue for hover/focus */
+  outline: none;
+}
+
+.glass-heading {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px 32px;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  text-align: center;
+}
+
+.glass-heading h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
